@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+
+    <link rel="stylesheet" href="write.css" />
+  </head>
+  <body>
+    <div class="bakcground">
+      <div>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link active" href="../index.html">자기소개</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">방명록</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../Login/login.html">로그인</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="form">
+        <div class="form_box">
+          <div class="namePut form_put">
+            이름
+            <input type="text" class="inputName" id="nameInputs" />
+          </div>
+          <div class="inputText form_put">
+            <textarea class="inputText_area" id="textInputs"></textarea>
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-primary" onclick="onclickBtn(event)">
+            제출
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      onclickBtn = (e) => {
+        const name = document.getElementById("nameInputs");
+
+        console.log(name);
+
+        const area = document.getElementById("textInputs");
+
+        alert(`이름 : ${name.value} 내용 : ${area.value}`);
+
+        name.value = "";
+        area.value = "";
+      };
+    </script>
+  </body>
+</html>

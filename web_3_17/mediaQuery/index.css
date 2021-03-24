@@ -1,0 +1,11 @@
+@media (max-width: 800px) {
+  body {
+    background-color: burlywood;
+  }
+}
+
+@media (min-width: 801px) {
+  body {
+    background-color: chartreuse;
+  }
+}

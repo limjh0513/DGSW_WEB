@@ -1,0 +1,97 @@
+.page {
+  max-width: 1000px;
+  margin: 100px auto;
+  padding: 16px;
+}
+
+.intro-card,
+.intro-card * {
+  /*
+	box-sizing
+		소개 카드 및 그 하위 모든 요소의 크기 지정 방식을 변경
+		(기본값) content-box: 지정된 크기에 테두리(border)와 내부 여백(padding)의 크기를 더함
+		border-box: 지정된 크기 안에 테두리와 내부 여백을 포함함
+		
+	ex, width: 200px, padding: 10px; 의 경우
+		content-box: 200px + 좌우 각 10px 총 220px 너비로 요소가 그려짐
+		border-box: 여백 포함하여 200px로 요소가 그려짐
+	*/
+  box-sizing: border-box;
+}
+
+.intro-card {
+  /* 너비는 부모 요소와 같게 가득 채움 */
+  width: 100%;
+  /* 그렇지만, 최대 크기는 600px */
+  max-width: 600px;
+  /* (즉 부모 요소가 600px보다 크면 600px, 그보다 작으면 부모와 같음) */
+
+  /* 테두리는 #bbb 색인 1px 직선을 사용 */
+  border: 1px solid #bbb;
+  /* 위아래 여백은 0, 좌우 여백은 자동(가운데 정렬) */
+  margin: 0 auto;
+}
+/* 이미지를 감싸는 div */
+.intro-image {
+  /* 가로세로 크기는 200px 고정 */
+  width: 200px;
+  height: 200px;
+  /* 우측과 아래쪽에 테두리 그리기 */
+  border-right: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  /*
+	float 속성
+		각 요소들은 '보통 흐름'에 따라 부모 요소 안에 배치되는데,
+		이 '보통 흐름'에서 빠져나와 고정된 위치 값을 가지게 만듦.
+	*/
+  float: left;
+}
+.intro-image img {
+  /* 이미지를 감싸는 div가 크기 고정이 되었으므로 이미지는 부모의 100%로 설정 */
+  width: 100%;
+}
+.intro-meta {
+  /* 높이는 이미지와 동일하게 200px로 설정 */
+  height: 200px;
+  /* 부동 요소는 무시하고 별개로 배치됨. 왼쪽에 이미지가 200px로 자리잡고 있으니, 왼쪽을 200px 만큼 띄워줌 */
+  margin-left: 200px;
+  /* 아래쪽에 테두리 그리기 */
+  border-bottom: 1px solid #bbb;
+  /* 안쪽 상하좌우 여백 16px */
+  padding: 16px;
+}
+.intro-meta > * {
+  /* 기본 정보의 자식 요소는 아래 쪽에 10px의 여백을 가짐 */
+  margin-bottom: 10px;
+}
+.intro-content {
+  padding: 16px;
+}
+
+.intro-buttons {
+  margin-top: 1px solid #bbb;
+  padding: 16px;
+}
+
+/* 700px 이하의 경우에 사용할 style 지정 */
+@media (max-width: 700px) {
+  .intro-image {
+    /* intro-image div가 다시 보통 흐름을 따르도록 변경 (기본값) */
+    float: none;
+    border-right: none;
+    width: 100%;
+
+    /* 글자, 이미지 등의 좌우 정렬은 text-align 옵션으로 지정 */
+    text-align: center;
+    /* 크기를 벗어나는 요소는 안보이도록 지정 */
+    overflow: hidden;
+  }
+  .intro-image img {
+    width: 200px;
+  }
+  .intro-meta {
+    /* 높이를 자동으로 계산하도록 변경 (기본값) */
+    height: auto;
+    margin-left: 0;
+  }
+}

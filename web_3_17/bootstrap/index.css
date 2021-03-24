@@ -1,0 +1,42 @@
+body {
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+.introduce {
+  width: 500px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.imgBox {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.image {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+.writeBox_write {
+  text-align: center;
+  margin: 30px;
+  font-size: 27px;
+}
+
+.name {
+  font-weight: bolder;
+}
+
+.nav {
+  font-size: 30px;
+}
+.nav-item {
+  margin: 20px;
+}
+
+.icon {
+  margin: 0 10px 20px 30px;
+}
