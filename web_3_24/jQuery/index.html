@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <input type="number" id="calc-a" />
+      <select id="calc-op">
+        <option value="add">+</option>
+        <option value="sub">-</option>
+        <option value="mul">x</option>
+        <option value="div">/</option>
+      </select>
+      <input type="number" id="calc-b" />
+      <button id="btn-calc">계산하기</button>
+    </div>
+    <div>결과: <span id="calc-result"></span></div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script>
+    $(function () {
+      $("#btn-calc").on("click", function () {
+        if ($("#calc-op").val() == "add") {
+          let result =
+            parseInt($("#calc-a").val()) + parseInt($("#calc-b").val());
+          $("#calc-result").text(result);
+        } else if ($("#calc-op").val() == "sub") {
+          let result =
+            parseInt($("#calc-a").val()) - parseInt($("#calc-b").val());
+          $("#calc-result").text(result);
+        } else if ($("#calc-op").val() == "mul") {
+          let result =
+            parseInt($("#calc-a").val()) * parseInt($("#calc-b").val());
+          $("#calc-result").text(result);
+        } else if ($("#calc-op").val() == "div") {
+          let result =
+            parseInt($("#calc-a").val()) / parseInt($("#calc-b").val());
+          $("#calc-result").text(result);
+        }
+      });
+    });
+  </script>
+</html>
