@@ -1,3 +1,29 @@
 body {
   background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 }
+
+.nav {
+  font-size: 30px;
+}
+.nav-item {
+  margin: 20px;
+}
+
+.login-form {
+  width: 400px;
+  height: 700px;
+  margin-top: 200px !important;
+  margin: 0 auto;
+}
+
+.form-floating {
+  margin: 40px;
+}
+
+.form-btn {
+  margin: 60px 40px 0 40px;
+}
+
+.explicate {
+  margin: 0 0 15px 0;
+}
