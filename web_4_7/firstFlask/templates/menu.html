@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    식단표
+    <form method="GET">
+        날짜 : <input type="text" name="date">
+        <input type="submit" value="날짜변경">
+    </form>
+    {# <- 이게 jinja2 에서의 주석
+        jinja2: flask의 템플릿 엔진
+    
+        {{ 변수명 }}: 해당 변수 바로 출력
+        
+        조건문
+            {% if 조건 %}
+        
+            {% elif 조건 %}
+        
+            {% else %}
+        
+            {% endif %}
+        
+        반복문
+            {% for ... %}
+        
+            {% endfor %}
+    #}
+            {% for menu in menu_data['menu'] %}
+                <h4>[{{ menu['MMEAL_SC_NM'] }}]</h4>
+                <p>{{ menu['DDISH_NM'] }}</p>
+                <b><u>칼로리:</u></b> {{ menu['CAL_INFO'] }}
+            {% endfor %}
+</body>
+</html>
