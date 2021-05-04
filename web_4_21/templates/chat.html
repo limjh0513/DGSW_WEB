@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      .chat-write {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        padding-top: 10px;
+        background-color: rgb(226, 245, 202);
+      }
+
+      .chats {
+        padding: 20px;
+        margin: 20px;
+        overflow: scroll;
+      }
+      .chat {
+        border-bottom: 1px solid #ddd;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chats"></div>
+    <div class="chat-write">
+      <form action="/chat/write" method="POST">
+        <input type="text" name="content" class="form-control" />
+        <input type="submit" class="btn btn-block" value="입력" />
+      </form>
+    </div>
+
+    <script>
+      var last_chat = 0;
+      function fetchChats() {
+        var chats = [];
+        $.ajax({
+          url: "/chat/data", // 요청할 URL
+          method: "GET", // HTTP Method
+          dataType: "json", // 응답 결과의 형태
+          data: { last_chat: last_chat },
+          success: function (data, textStatus, jqXHR) {
+            for (var chat of data.chats) {
+              console.log(chat);
+              $(".chats").append('<div class="chat">' + chat + "</div>");
+            }
+            //마지막 채팅 기록
+            last_chat = data.last_chat;
+
+            window.scrollTo(0, document.body.scrollHeight);
+          },
+          error: function (jqXHR, textStatus, errorThrown) {
+            // 실패 했을 때
+            alert("오류 발생");
+          },
+          complete: function (jqXHR, textStatus) {
+            // 성공을 하든, 실패를 하든, 다 끝났을 때
+
+            //나 자신을 5초 뒤에 호출
+            setTimeout(fetchChats, 0);
+          },
+        });
+      }
+      //페이지가 열렸을 때 한번 실행되도록 호출
+      fetchChats();
+
+      $("form").on("submit", function (e) {
+        //원래 이벤트가 작동될 때 실행되었을 기본 이벤트 비활성화
+        e.preventDefault();
+
+        var content = $("input[name = content]").val();
+        $("input[name=content]").val("");
+
+        $.ajax({
+          url: "/chat/write", // 요청할 URL
+          method: "POST", // HTTP Method
+          dataType: "json", // 응답 결과의 형태
+          data: { content: content },
+          success: function (data, textStatus, jqXHR) {},
+          error: function (jqXHR, textStatus, errorThrown) {
+            alert("오류 발생");
+          },
+          complete: function (jqXHR, textStatus) {},
+        });
+      });
+    </script>
+  </body>
+</html>
