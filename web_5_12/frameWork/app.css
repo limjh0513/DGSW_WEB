@@ -1,0 +1,23 @@
+.friend {
+	border: 1px solid #aaa;
+	width: 200px;
+	display: inline-block;
+	vertical-align: top;
+	margin: 8px;
+}
+.friend img {
+	width: 100%;
+}
+.friend-content {
+	padding: 10px;
+	border-top: 1px solid #aaa;
+}
+.friend-content h3 {
+	text-align: center;
+	margin: 8px 0;
+}
+
+#friend-select {
+	font-size: 18px;
+	width: 60px;
+}
