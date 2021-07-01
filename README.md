@@ -17,4 +17,4 @@
 - 5/19 - 부처님 오신 날
 - [5/23](https://github.com/limjh0513/DGSW_WEB/tree/main/web_5_26) - Vue 개발환경 구축 및 Vue로 간단한 카드 만들기
 - [6/1](https://github.com/limjh0513/DGSW_WEB/tree/main/web_6_1) - Vue 디렉티브 등 수업
-
+- [6/9](https://github.com/limjh0513/DGSW_WEB/tree/main/web_6_9) - Vue 수행평가 대비 수업
