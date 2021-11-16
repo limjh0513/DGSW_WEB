@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var name;
+
+      function helloBtnClick() {
+        alert("하이");
+      }
+
+      function confirmBtnClick() {
+        var choice = confirm("처음써봐요");
+        console.log(choice);
+      }
+
+      function promptBtnClick() {
+        name = prompt("이름 입력");
+        console.log(name);
+        document.write("<br> 안녕하세요 " + name + "님 <br>");
+      }
+
+      console.log(name);
+    </script>
+    <button onclick="helloBtnClick()">ㅎㅇㅎㅇ</button>
+    <button onclick="confirmBtnClick()">컨펌</button>
+    <button onclick="promptBtnClick()">프롬프트</button>
+  </body>
+</html>

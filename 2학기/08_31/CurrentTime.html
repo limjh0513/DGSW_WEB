@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="timeBtn">현재 시각</button>
+    <p id="showTime"></p>
+  </body>
+  <script>
+    var timeBtn = document.getElementById("timeBtn");
+    var showText = document.getElementById("showTime");
+    timeBtn.onclick = loadCurrentTime;
+
+    function loadCurrentTime() {
+      let today = new Date();
+      let hour = today.getHours();
+      let min = today.getMinutes();
+      let sec = today.getSeconds();
+
+      let string = hour + " : " + min + " : " + sec;
+
+      showText.innerText = string;
+    }
+  </script>
+</html>

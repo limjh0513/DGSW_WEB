@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="innerTextOnclick()">innerText로 표시하기</button>
+    <button onclick="innerHtmlOnClick()">innerHtml로 표시하기</button>
+    <h1>현재 시간</h1>
+    <div id="currentTime"></div>
+  </body>
+
+  <script>
+    var now;
+    var show = document.getElementById("currentTime");
+
+    function innerTextOnclick() {
+      now = new Date();
+      show.innerText = now;
+    }
+
+    function innerHtmlOnClick() {
+      now = new Date();
+      show.innerHTML = "<h2><em>" + now + "<em/><h2/>";
+    }
+  </script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img
+      src="https://cdn.epnc.co.kr/news/photo/202001/93682_85075_3859.jpg"
+      id="cover"
+      width="800"
+      height="500"
+    />
+  </body>
+
+  <script>
+    var cover = document.getElementById("cover");
+    cover.addEventListener("mouseover", changePic);
+    cover.addEventListener("mouseout", originPic);
+
+    function changePic() {
+      cover.src =
+        "https://www.lottehotelmagazine.com/resources/d434c17f-5ac2-4b98-8021-f3bdd5cc26f4_img_TRAVEL_busan_detail01.jpg";
+    }
+    function originPic() {
+      cover.src =
+        "https://cdn.epnc.co.kr/news/photo/202001/93682_85075_3859.jpg";
+    }
+  </script>
+</html>
